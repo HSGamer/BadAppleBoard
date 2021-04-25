@@ -4,8 +4,8 @@ import me.hsgamer.betterboard.api.BoardFrame;
 import me.hsgamer.betterboard.api.provider.ConfigurableBoardProvider;
 import me.hsgamer.betterboard.lib.core.bukkit.utils.MessageUtils;
 import me.hsgamer.betterboard.lib.core.config.Config;
+import me.hsgamer.betterboard.lib.core.variable.VariableManager;
 import me.hsgamer.betterboard.provider.ConditionProvider;
-import me.hsgamer.hscore.variable.VariableManager;
 import org.bukkit.entity.Player;
 
 import java.util.*;
