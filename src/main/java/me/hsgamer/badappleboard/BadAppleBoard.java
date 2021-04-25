@@ -60,6 +60,7 @@ public final class BadAppleBoard extends BasePlugin {
             }
         } catch (IOException e) {
             e.printStackTrace();
+            list.forEach(Frame::clear);
             list.clear();
         }
         return list;
