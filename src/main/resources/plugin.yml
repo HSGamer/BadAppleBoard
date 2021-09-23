@@ -1,6 +1,6 @@
 name: BadAppleBoard
 version: ${project.version}
 main: me.hsgamer.badappleboard.BadAppleBoard
-api-version: 1.16
+api-version: 1.13
 depend: [ BetterBoard ]
 authors: [ HSGamer ]
