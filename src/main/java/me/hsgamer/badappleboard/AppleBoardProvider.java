@@ -1,29 +1,22 @@
 package me.hsgamer.badappleboard;
 
-import me.hsgamer.betterboard.api.BoardFrame;
-import me.hsgamer.betterboard.api.provider.ConfigurableBoardProvider;
 import me.hsgamer.betterboard.lib.core.bukkit.utils.MessageUtils;
 import me.hsgamer.betterboard.lib.core.config.Config;
 import me.hsgamer.betterboard.lib.core.variable.VariableManager;
-import me.hsgamer.betterboard.provider.ConditionProvider;
+import me.hsgamer.betterboard.provider.board.FastBoardProvider;
+import me.hsgamer.betterboard.provider.board.internal.BoardFrame;
 import org.bukkit.entity.Player;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class AppleBoardProvider implements ConfigurableBoardProvider {
+public class AppleBoardProvider extends FastBoardProvider {
     private final List<Frame> frames = new ArrayList<>();
     private final Map<UUID, Integer> currentIndexMap = new ConcurrentHashMap<>();
-    private final ConditionProvider conditionProvider = new ConditionProvider();
     private String title = "&u&lBad Apple";
 
     public AppleBoardProvider(List<Frame> frames) {
         this.frames.addAll(frames);
-    }
-
-    @Override
-    public boolean canFetch(Player player) {
-        return this.conditionProvider.check(player);
     }
 
     @Override
@@ -38,12 +31,13 @@ public class AppleBoardProvider implements ConfigurableBoardProvider {
 
     @Override
     public void clear() {
+        super.clear();
         this.frames.clear();
     }
 
     @Override
     public void loadFromConfig(Config config) {
-        this.conditionProvider.loadFromMap(config.getNormalizedValues("condition", false));
+        super.loadFromConfig(config);
         this.title = config.getInstance("title", title, String.class);
     }
 }
