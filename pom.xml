@@ -6,7 +6,7 @@
 
     <groupId>me.hsgamer</groupId>
     <artifactId>badappleboard</artifactId>
-    <version>2.1-SNAPSHOT</version>
+    <version>2.1</version>
     <packaging>jar</packaging>
 
     <name>BadAppleBoard</name>
