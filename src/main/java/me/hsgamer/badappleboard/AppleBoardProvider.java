@@ -1,10 +1,10 @@
 package me.hsgamer.badappleboard;
 
-import me.hsgamer.betterboard.lib.core.bukkit.utils.MessageUtils;
 import me.hsgamer.betterboard.lib.core.config.Config;
 import me.hsgamer.betterboard.lib.core.variable.VariableManager;
 import me.hsgamer.betterboard.provider.board.FastBoardProvider;
 import me.hsgamer.betterboard.provider.board.internal.BoardFrame;
+import me.hsgamer.hscore.bukkit.utils.ColorUtils;
 import org.bukkit.entity.Player;
 
 import java.util.*;
@@ -26,7 +26,7 @@ public class AppleBoardProvider extends FastBoardProvider {
         }
         int index = this.currentIndexMap.computeIfAbsent(player.getUniqueId(), uuid -> 0);
         this.currentIndexMap.put(player.getUniqueId(), (index + 1) % this.frames.size());
-        return Optional.of(new BoardFrame(MessageUtils.colorize(VariableManager.setVariables(title, player.getUniqueId())), this.frames.get(index).getList()));
+        return Optional.of(new BoardFrame(ColorUtils.colorize(VariableManager.setVariables(title, player.getUniqueId())), this.frames.get(index).getList()));
     }
 
     @Override

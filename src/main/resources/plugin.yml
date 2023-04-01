@@ -4,3 +4,4 @@ main: me.hsgamer.badappleboard.BadAppleBoard
 api-version: 1.13
 depend: [ BetterBoard ]
 authors: [ HSGamer ]
+folia-supported: true
