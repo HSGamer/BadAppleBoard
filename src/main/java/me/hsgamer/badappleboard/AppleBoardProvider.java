@@ -1,10 +1,10 @@
 package me.hsgamer.badappleboard;
 
+import me.hsgamer.betterboard.lib.core.bukkit.utils.ColorUtils;
 import me.hsgamer.betterboard.lib.core.config.Config;
 import me.hsgamer.betterboard.lib.core.variable.VariableManager;
 import me.hsgamer.betterboard.provider.board.FastBoardProvider;
 import me.hsgamer.betterboard.provider.board.internal.BoardFrame;
-import me.hsgamer.hscore.bukkit.utils.ColorUtils;
 import org.bukkit.entity.Player;
 
 import java.util.*;
