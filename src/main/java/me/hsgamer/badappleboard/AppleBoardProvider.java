@@ -26,7 +26,7 @@ public class AppleBoardProvider extends FastBoardProvider {
         }
         int index = this.currentIndexMap.computeIfAbsent(player.getUniqueId(), uuid -> 0);
         this.currentIndexMap.put(player.getUniqueId(), (index + 1) % this.frames.size());
-        return Optional.of(new BoardFrame(ColorUtils.colorize(VariableManager.setVariables(title, player.getUniqueId())), this.frames.get(index).getList()));
+        return Optional.of(new BoardFrame(ColorUtils.colorize(VariableManager.GLOBAL.setVariables(title, player.getUniqueId())), this.frames.get(index).getList()));
     }
 
     @Override
@@ -38,6 +38,6 @@ public class AppleBoardProvider extends FastBoardProvider {
     @Override
     public void loadFromConfig(Config config) {
         super.loadFromConfig(config);
-        this.title = config.getInstance("title", title, String.class);
+        this.title = config.getInstance(FastBoardProvider.TITLE_PATH, title, String.class);
     }
 }

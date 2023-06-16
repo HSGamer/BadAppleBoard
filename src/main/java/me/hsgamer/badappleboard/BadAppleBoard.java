@@ -2,6 +2,7 @@ package me.hsgamer.badappleboard;
 
 import me.hsgamer.betterboard.builder.BoardProviderBuilder;
 import me.hsgamer.betterboard.lib.core.bukkit.baseplugin.BasePlugin;
+import me.hsgamer.betterboard.lib.core.config.PathString;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,7 +23,7 @@ public final class BadAppleBoard extends BasePlugin {
 
         BoardProviderBuilder.INSTANCE.register(c -> {
             AppleBoardProvider provider;
-            if (c.getInstance("lang", "en", String.class).equalsIgnoreCase("en")) {
+            if (c.getInstance(new PathString("lang"), "en", String.class).equalsIgnoreCase("en")) {
                 provider = new AppleBoardProvider(enFrames);
             } else {
                 provider = new AppleBoardProvider(jpFrames);
