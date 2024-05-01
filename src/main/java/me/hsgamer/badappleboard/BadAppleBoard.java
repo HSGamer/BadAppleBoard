@@ -1,8 +1,8 @@
 package me.hsgamer.badappleboard;
 
 import me.hsgamer.betterboard.builder.BoardProviderBuilder;
-import me.hsgamer.betterboard.lib.core.bukkit.baseplugin.BasePlugin;
 import me.hsgamer.betterboard.lib.core.config.PathString;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,12 +12,12 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class BadAppleBoard extends BasePlugin {
+public final class BadAppleBoard extends JavaPlugin {
     private final List<Frame> jpFrames = new ArrayList<>();
     private final List<Frame> enFrames = new ArrayList<>();
 
     @Override
-    public void enable() {
+    public void onEnable() {
         jpFrames.addAll(load(getResource("badapple_jp.txt")));
         enFrames.addAll(load(getResource("badapple_en.txt")));
 
@@ -34,7 +34,7 @@ public final class BadAppleBoard extends BasePlugin {
     }
 
     @Override
-    public void disable() {
+    public void onDisable() {
         jpFrames.forEach(Frame::clear);
         enFrames.forEach(Frame::clear);
         jpFrames.clear();
