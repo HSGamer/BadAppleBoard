@@ -6,7 +6,7 @@
 
     <groupId>me.hsgamer</groupId>
     <artifactId>badappleboard</artifactId>
-    <version>3.0</version>
+    <version>3.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>BadAppleBoard</name>
@@ -62,6 +62,10 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
+        <repository>
+            <id>codemc-public</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -74,8 +78,13 @@
         <dependency>
             <groupId>me.hsgamer</groupId>
             <artifactId>betterboard</artifactId>
-            <version>3.0</version>
+            <version>3.1</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>me.hsgamer</groupId>
+            <artifactId>hscore-animate</artifactId>
+            <version>4.4.4-SNAPSHOT</version>
         </dependency>
     </dependencies>
 </project>
