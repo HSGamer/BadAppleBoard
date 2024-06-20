@@ -40,6 +40,12 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <relocations>
+                                <relocation>
+                                    <pattern>me.hsgamer.hscore.animate</pattern>
+                                    <shadedPattern>me.hsgamer.badappleboard.animate</shadedPattern>
+                                </relocation>
+                            </relocations>
                         </configuration>
                     </execution>
                 </executions>
@@ -62,10 +68,6 @@
             <id>sonatype</id>
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
-        <repository>
-            <id>codemc-public</id>
-            <url>https://repo.codemc.io/repository/maven-public/</url>
-        </repository>
     </repositories>
 
     <dependencies>
@@ -84,7 +86,7 @@
         <dependency>
             <groupId>me.hsgamer</groupId>
             <artifactId>hscore-animate</artifactId>
-            <version>4.4.4-SNAPSHOT</version>
+            <version>4.4.4</version>
         </dependency>
     </dependencies>
 </project>
