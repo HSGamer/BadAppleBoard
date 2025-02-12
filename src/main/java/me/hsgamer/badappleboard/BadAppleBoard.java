@@ -1,7 +1,6 @@
 package me.hsgamer.badappleboard;
 
 import me.hsgamer.betterboard.builder.BoardProviderBuilder;
-import me.hsgamer.betterboard.lib.core.config.PathString;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.BufferedReader;
@@ -23,7 +22,7 @@ public final class BadAppleBoard extends JavaPlugin {
 
         BoardProviderBuilder.INSTANCE.register(c -> {
             AppleBoardProvider provider;
-            if (c.getInstance(new PathString("lang"), "en", String.class).equalsIgnoreCase("en")) {
+            if (c.getInstance(String.class, "en", new String[]{"lang"}).equalsIgnoreCase("en")) {
                 provider = new AppleBoardProvider(enFrames);
             } else {
                 provider = new AppleBoardProvider(jpFrames);

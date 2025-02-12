@@ -3,7 +3,6 @@ package me.hsgamer.badappleboard;
 import me.hsgamer.betterboard.lib.core.bukkit.utils.ColorUtils;
 import me.hsgamer.betterboard.lib.core.common.Validate;
 import me.hsgamer.betterboard.lib.core.config.Config;
-import me.hsgamer.betterboard.lib.core.config.PathString;
 import me.hsgamer.betterboard.lib.core.variable.VariableManager;
 import me.hsgamer.betterboard.provider.board.FastBoardProvider;
 import me.hsgamer.betterboard.provider.board.internal.BoardFrame;
@@ -45,8 +44,10 @@ public class AppleBoardProvider extends FastBoardProvider {
     @Override
     public void loadFromConfig(Config config) {
         super.loadFromConfig(config);
-        this.title = config.getInstance(FastBoardProvider.TITLE_PATH, title, String.class);
-        this.fps = Optional.ofNullable(config.getNormalized(new PathString("fps")))
+        this.title = Optional.ofNullable(config.getNormalized("title"))
+                .map(Object::toString)
+                .orElse(title);
+        this.fps = Optional.ofNullable(config.getNormalized("fps"))
                 .map(Object::toString)
                 .flatMap(Validate::getNumber)
                 .map(Number::intValue)
