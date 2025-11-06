@@ -1,12 +1,12 @@
 package me.hsgamer.badappleboard;
 
+import io.github.projectunified.craftux.animation.Animation;
 import me.hsgamer.betterboard.lib.core.bukkit.utils.ColorUtils;
 import me.hsgamer.betterboard.lib.core.common.Validate;
 import me.hsgamer.betterboard.lib.core.config.Config;
 import me.hsgamer.betterboard.lib.core.variable.VariableManager;
 import me.hsgamer.betterboard.provider.board.FastBoardProvider;
 import me.hsgamer.betterboard.provider.board.internal.BoardFrame;
-import me.hsgamer.hscore.animate.Animation;
 import org.bukkit.entity.Player;
 
 import java.util.*;

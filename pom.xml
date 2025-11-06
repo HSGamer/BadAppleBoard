@@ -42,7 +42,7 @@
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <relocations>
                                 <relocation>
-                                    <pattern>me.hsgamer.hscore.animate</pattern>
+                                    <pattern>io.github.projectunified.craftux</pattern>
                                     <shadedPattern>me.hsgamer.badappleboard.animate</shadedPattern>
                                 </relocation>
                             </relocations>
@@ -84,9 +84,9 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>me.hsgamer</groupId>
-            <artifactId>hscore-animate</artifactId>
-            <version>4.5.7</version>
+            <groupId>io.github.projectunified</groupId>
+            <artifactId>craftux-animation</artifactId>
+            <version>1.5.0</version>
         </dependency>
     </dependencies>
 </project>
